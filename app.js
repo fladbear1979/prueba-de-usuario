@@ -7,6 +7,7 @@ app.use('/', userRoutes);
 
 // Error handling middleware
 app.use((req, res) => {
+    console.error(`Unhandled request: ${req.method} ${req.originalUrl}`);
     res.status(404).json({ message: 'Not Found' });
 });
 

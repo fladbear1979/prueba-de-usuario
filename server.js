@@ -10,10 +10,10 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.listen(PORT, () => {
-  console.log(`Servidor escuchando en puerto ${PORT}`);
+  console.log(`Server listening on port ${PORT}`);
 });
 
-// Conectar a la base de datos
+// Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Conectado a MongoDB'))
-  .catch(err => console.error('Error de conexión', err));
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('Connection error', err));

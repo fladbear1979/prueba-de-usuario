@@ -6,7 +6,7 @@ app.use(express.json());
 app.use('/', userRoutes);
 
 // Error handling middleware
-app.use((req, res) => {
+app.use((req, res, next) => {
     console.error(`Unhandled request: ${req.method} ${req.originalUrl}`);
     res.status(404).json({ message: 'Not Found' });
 });
